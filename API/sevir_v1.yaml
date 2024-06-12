@@ -1,0 +1,35 @@
+dataset:
+  dataset_name: "sevir"
+  img_height: 384
+  img_width: 384
+  batch_size: 4
+  in_len: 13
+  out_len: 12
+  seq_len: 25
+  plot_stride: 2
+  interval_real_time: 5
+  sample_mode: "sequent"
+  stride: 12
+  layout: "NTCHW"
+  
+  #   set Rescale_mode = "sevir" for normalizing X only and not Y
+  #   If wanted to normalize Y also then change the code on /API/sevir_dataloader.py value PREPROCESS_SCALE_SEVIR.. change it as written in comment.
+
+  rescale_method: "sevir" 
+  # start_date: [2019,3,1]
+  # train_val_split_date: [2019, 8, 1]
+  # train_test_split_date: [2019, 10, 15]
+  # end_date: [2019,10,30]
+  start_date: null
+  train_val_split_date: [2019, 1, 3]
+  train_test_split_date: [2019, 6, 1]
+  end_date: null
+
+  metrics_mode: "0"
+#  metrics_list: ['csi', 'pod', 'sucr', 'bias']
+  metrics_list: ['csi']
+  threshold_list: [16, 74, 133, 160, 181, 219]
+layout:
+  in_len: 13
+  out_len: 12
+  layout: "NTCHW"
